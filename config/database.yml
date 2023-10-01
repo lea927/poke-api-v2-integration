@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: poke_api_v2_integration_dev
+
+test:
+  <<: *default
+  database: poke_api_v2_integration_test
+
+production:
+  <<: *default
+  database: poke_api_v2_integration_production
+  username: postgres
+  password: <%= ENV['POKE_API_V2_INT_DATABASE_PASSWORD'] %>
