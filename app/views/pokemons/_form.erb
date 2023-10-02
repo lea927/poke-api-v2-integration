@@ -1,0 +1,43 @@
+<%= form_for(@pokemon) do |f| %>
+  <% if @pokemon.errors.any? %>
+      <h2><%= pluralize(@pokemon.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+        <% @pokemon.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :base_experience %><br />
+    <%= f.number_field :base_experience %>
+  </p>
+  <p>
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </p>
+  <p>
+    <%= f.radio_button :is_default, true %>
+    <%= f.label :is_default_true, 'Yes' %>
+    <%= f.radio_button :is_default, false %>
+    <%= f.label :is_default_false, 'No' %>
+  </p>
+  <p>
+    <%= f.label :order %><br />
+    <%= f.number_field :order %>
+  </p>
+  <p>
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </p>
+  <p>
+    <%= f.label :location_area_encounters %><br />
+    <%= f.text_field :location_area_encounters %>
+  </p>
+  <%= f.submit %>
+<% end %>

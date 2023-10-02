@@ -1,2 +1,33 @@
-<h1>Pokemons#show</h1>
-<p>Find me in app/views/pokemons/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pokemon.name %>
+</p>
+<p>
+  <b>Base Experience:</b>
+  <%= @pokemon.base_experience %>
+</p>
+<p>
+  <b>Height:</b>
+  <%= @pokemon.height %>
+</p>
+<p>
+  <b>Default:</b>
+  <%= @pokemon.is_default ? "Yes" : "No" %>
+</p>
+<p>
+  <b>Order:</b>
+  <%= @pokemon.order %>
+</p>
+<p>
+  <b>Weight:</b>
+  <%= @pokemon.weight %>
+</p>
+<p>
+  <b>Location area encounters:</b>
+  <%= @pokemon.location_area_encounters %>
+</p>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<%= link_to 'Back', pokemons_path %>
