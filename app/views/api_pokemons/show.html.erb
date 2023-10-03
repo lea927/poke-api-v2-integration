@@ -1,2 +1,27 @@
-<h1>ApiPokemons#show</h1>
-<p>Find me in app/views/api_pokemons/show.html.erb</p>
+<p>
+  <%= image_tag @image_url, alt: "Image of pokemon" %>
+  <p>
+    <b>Name:</b>
+    <%= @pokemon.dig('name') %>
+  </p>
+  <p>
+    <b>Base Experience:</b>
+    <%= @pokemon.dig('base_experience').to_s %>
+  </p>
+  <p>
+    <b>Height:</b>
+    <%= @pokemon.dig('height').to_s %>
+  </p>
+  <p>
+    <b>Default:</b>
+    <%= @pokemon.dig('is_default') ? "Yes" : "No" %>
+  </p>
+  <p>
+    <b>Order:</b>
+    <%= @pokemon.dig('order').to_s %>
+  </p>
+  <p>
+    <b>Weight:</b>
+    <%= @pokemon.dig('weight').to_s %>
+  </p>
+</p>

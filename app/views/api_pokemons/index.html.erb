@@ -1,2 +1,14 @@
-<h1>ApiPokemons#index</h1>
-<p>Find me in app/views/api_pokemons/index.html.erb</p>
+<h1>Pokemons from API</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @pokemons.each do |pokemon| %>
+    <tr>
+      <td><%= link_to pokemon.dig('name'), api_pokemon_path(pokemon.dig('name')) %></td>
+    </tr>
+  <% end %>
+</table>
+
