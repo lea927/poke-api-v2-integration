@@ -1,5 +1,14 @@
 <h1>Pokemons from API</h1>
 
+<%= form_tag api_pokemons_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter Pokemon Name" %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
