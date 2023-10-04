@@ -4,7 +4,9 @@ module ApiPokemonsHelper
 
   def get_pokemons
     begin
-      HTTParty.get("#{BASE_URI}?limit=100")
+      Rails.cache.fetch("get_pokemon_data", expires_in: 1.hour) do
+        HTTParty.get("#{BASE_URI}?limit=100")
+      end
     rescue HTTParty::Error => e
       Rails.logger.error(e)
     end
@@ -12,7 +14,9 @@ module ApiPokemonsHelper
 
   def get_pokemon(name)
     begin
-      HTTParty.get("#{BASE_URI}#{name}")
+      Rails.cache.fetch("get_pokemon_data", expires_in: 1.hour) do
+        HTTParty.get("#{BASE_URI}#{name}")
+      end
     rescue HTTParty::Error => e
       Rails.logger.error(e)
     end

@@ -13,17 +13,19 @@
 
   <% @pokemons.each do |pokemon| %>
     <tr>
-      <td><%= pokemon.name %></td>
-      <td><%= pokemon.base_experience %></td>
-      <td><%= pokemon.height %></td>
-      <td><%= pokemon.is_default ? "Yes" : "No" %></td>
-      <td><%= pokemon.order %></td>
-      <td><%= pokemon.weight %></td>
-      <td><%= pokemon.location_area_encounters %></td>
-      <td><%= link_to 'Show', pokemon %></td>
-      <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-      <td><%= link_to 'Destroy', pokemon, :confirm => 'Are you sure?',
-                      :method => :delete %></td>
+      <% cache pokemon do %>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.base_experience %></td>
+        <td><%= pokemon.height %></td>
+        <td><%= pokemon.is_default ? "Yes" : "No" %></td>
+        <td><%= pokemon.order %></td>
+        <td><%= pokemon.weight %></td>
+        <td><%= pokemon.location_area_encounters %></td>
+        <td><%= link_to 'Show', pokemon %></td>
+        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+        <td><%= link_to 'Destroy', pokemon, :confirm => 'Are you sure?',
+                        :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
