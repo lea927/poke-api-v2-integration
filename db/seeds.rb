@@ -16,6 +16,78 @@ pokemons = [
     order: 2,
     weight: 905,
     location_area_encounters: "mountains"
+  },
+  {
+    name: "Bulbasaur",
+    base_experience: 64,
+    height: 7,
+    is_default: true,
+    order: 3,
+    weight: 69,
+    location_area_encounters: "grassland"
+  },
+  {
+    name: "Squirtle",
+    base_experience: 63,
+    height: 5,
+    is_default: true,
+    order: 4,
+    weight: 90,
+    location_area_encounters: "lakes"
+  },
+  {
+    name: "Jigglypuff",
+    base_experience: 95,
+    height: 5,
+    is_default: true,
+    order: 5,
+    weight: 55,
+    location_area_encounters: "grassland"
+  },
+  {
+    name: "Meowth",
+    base_experience: 58,
+    height: 4,
+    is_default: true,
+    order: 6,
+    weight: 42,
+    location_area_encounters: "urban"
+  },
+  {
+    name: "Psyduck",
+    base_experience: 64,
+    height: 8,
+    is_default: true,
+    order: 7,
+    weight: 196,
+    location_area_encounters: "lakes"
+  },
+  {
+    name: "Machop",
+    base_experience: 61,
+    height: 8,
+    is_default: true,
+    order: 8,
+    weight: 195,
+    location_area_encounters: "mountains"
+  },
+  {
+    name: "Tentacool",
+    base_experience: 67,
+    height: 9,
+    is_default: true,
+    order: 9,
+    weight: 455,
+    location_area_encounters: "sea"
+  },
+  {
+    name: "Clefairy",
+    base_experience: 91,
+    height: 9,
+    is_default: true,
+    order: 9,
+    weight: 455,
+    location_area_encounters: "sea"
   }
 ]
 

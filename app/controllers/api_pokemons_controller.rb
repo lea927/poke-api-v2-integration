@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class ApiPokemonsController < ApplicationController
   include ApiPokemonsHelper
   def index
@@ -12,7 +14,8 @@ class ApiPokemonsController < ApplicationController
 
       @pokemons = [parsed_response_from(get_pokemon(params[:search]))] if response.code == 200
     else
-      @pokemons = parsed_response_from(get_pokemons)&.dig('results')
+      response = parsed_response_from(get_pokemons)&.dig('results')
+      @pokemons = response.paginate(page: params[:page], per_page: 5)
     end
   end
 

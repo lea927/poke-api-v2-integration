@@ -4,7 +4,7 @@ module ApiPokemonsHelper
 
   def get_pokemons
     begin
-      HTTParty.get(BASE_URI)
+      HTTParty.get("#{BASE_URI}?limit=100")
     rescue HTTParty::Error => e
       Rails.logger.error(e)
     end

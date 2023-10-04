@@ -27,7 +27,9 @@
     </tr>
   <% end %>
 </table>
-
+<br />
+<%= page_entries_info @pokemons %>
+<%= will_paginate @pokemons %>
 <br />
 
 <%= link_to 'New Pokemon', new_pokemon_path %>
